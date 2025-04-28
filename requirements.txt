@@ -1,5 +1,9 @@
 streamlit
-fastapi
+fastapi[standard]
 uvicorn
-ollama
 requests
+pandas
+numpy
+xgboost
+scikit-learn
+joblit
