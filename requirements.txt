@@ -2,6 +2,7 @@ streamlit
 fastapi[standard]
 uvicorn
 requests
+chromadb
 pandas
 numpy
 xgboost
