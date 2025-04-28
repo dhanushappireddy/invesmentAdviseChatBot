@@ -16,3 +16,19 @@ GenAI Model -->	Ollama (Mistral)
 Machine Learning -->	XGBoost
 Vector Search	Vector embedding --> Sentence Transformers
 Language -->	Python
+
+📦 Installation
+1. Install Python dependencies:
+   pip install -r requirements.txt
+2. Start the backend server (FastAPI):
+   uvicorn app:app --reload --port 8001
+3. Start the frontend UI (Streamlit):
+   streamlit run UI/streamlite_ui.py
+
+🧠 How It Works
+User interacts via Streamlit UI — inputs their investment details or queries.
+FastAPI receives and processes the input.
+Vector embeddings search for similar historical queries for better context.
+XGBoost model predicts the expected return percentage based on user profile (age, income, risk appetite, etc.).
+All collected information is fed into the prompt given to the Mistral model via Ollama.
+Mistral model generates and returns personalized investment advice.
