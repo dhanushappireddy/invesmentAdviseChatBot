@@ -4,7 +4,7 @@ from App.Tenure import calculate_expectedAmount
 from App.main import getUserDetails
 from App.predict import predict
 from App.ReturnPercentage import calculateReturn
-MODEL_NAME = "investo"
+MODEL_NAME = "gemma3"
 def analyzeData(name: str, age: int, investmentAmount: float, tenure: float, salary: float, riskTolerance: str) -> str:
     relevant_data,Return_Amount, Return_Percentage = getUserDetails(name, age, investmentAmount, tenure, riskTolerance)
     context = "\n\n".join(relevant_data)

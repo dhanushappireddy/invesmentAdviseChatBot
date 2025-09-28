@@ -6,9 +6,16 @@ from sklearn.metrics import mean_squared_error, r2_score
 import xgboost as xgb
 from xgboost import XGBRegressor
 import joblib  # for saving/loading model
+from pathlib import Path
 
-# 1. Load the dataset
-file_path = r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\investment_dataset.csv"
+# project_root = folder that contains "App" and "DataSets"
+project_root = Path(__file__).resolve().parent.parent  
+
+file_path = project_root / "DataSets" / "Datasets_Investment" / "investment_dataset.csv"
+
+print("🔎 Looking for:", file_path)
+print("✅ Exists:", file_path.exists())
+
 df = pd.read_csv(file_path)
 
 # 2. Preprocess the data

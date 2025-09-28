@@ -1,9 +1,14 @@
 import pandas as pd
+from pathlib import Path
 
-file_path_stocks = r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\stocks.csv" 
-file_path_mutualFunds = r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\mutualfunds.csv"
-file_path_gold = r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\gold.csv"
-file_path_fd = r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\fd.csv"
+# Get the directory of the current script
+base_dir = Path(__file__).resolve().parent.parent  # moves up from App/ to project root
+# Construct file paths relative to the script
+data_dir = base_dir / "DataSets" / "Datasets_Investment"
+file_path_stocks = data_dir / "stocks.csv"
+file_path_mutualFunds = data_dir / "mutualfunds.csv"
+file_path_gold = data_dir / "gold.csv"
+file_path_fd = data_dir / "fd.csv"
 
 def calculateReturn(assetClass):
     path = ""

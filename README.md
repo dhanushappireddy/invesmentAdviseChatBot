@@ -32,3 +32,16 @@ Vector embeddings search for similar historical queries for better context.
 XGBoost model predicts the expected return percentage based on user profile (age, income, risk appetite, etc.).
 All collected information is fed into the prompt given to the Mistral model via Ollama.
 Mistral model generates and returns personalized investment advice.
+
+Installations:
+pip install ollama
+pip install streamlit
+pip install "fastapi[standard]"
+pip install chromadb
+pip install xgboost
+pip install sentence-transformers
+
+
+Commands to run:
+Streamlite: streamlit run UI/streamlite_ui.py
+Services(Fast API's): uvicorn App.api:app --host 0.0.0.0 --port 8001 --reload

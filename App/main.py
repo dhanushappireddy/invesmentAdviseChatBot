@@ -3,6 +3,18 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 import json
 from App.predict import predict
+from pathlib import Path
+
+base_dir = Path(__file__).resolve().parent.parent  
+
+# Build dataset path relative to project root
+investment_dataset_path = (
+    base_dir / "DataSets" / "Datasets_Investment" / "investment_dataset.csv"
+)
+
+print(f"Path is {investment_dataset_path}")
+print("Exists:", investment_dataset_path.exists())
+
 
 # Reading my dataSet here
 def load_dataset(file_path):
@@ -54,7 +66,8 @@ def get_relevant_data(user_query, collection, embed_model, k=3):
     return results['documents'][0]
 
 def getUserDetails(name, age, investmentAmount, tenure, riskTolerance):
-    df = load_dataset(r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\investment_dataset.csv")
+    # df = load_dataset(r"C:\Users\DhanushAppireddy\Documents\GenAI_20-04-25\GenAIExpt\DataSets\Datasets_Investment\investment_dataset.csv")
+    df = load_dataset(investment_dataset_path)
     text_chunks = convert_rows(df)
     collection, embed_model = store_in_chroma(text_chunks)
 
